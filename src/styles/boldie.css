@@ -1,0 +1,190 @@
+/* Boldie's look: monochrome, Helvetica Neue (system copy only, it is licensed), heavy uppercase headings,
+   hairlines, square corners, short eased transitions. Starlight's dark theme is :root, light is [data-theme='light']. */
+
+:root {
+	--sl-font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	--sl-font-system: var(--sl-font);
+
+	--sl-color-accent-low: #2a2a2a;
+	--sl-color-accent: #f2f2ef;
+	--sl-color-accent-high: #ffffff;
+	--sl-color-white: #ffffff;
+	--sl-color-gray-1: #ececea;
+	--sl-color-gray-2: #c8c8c4;
+	--sl-color-gray-3: #9a9a96;
+	--sl-color-gray-4: #5e5e5b;
+	--sl-color-gray-5: #2e2e2c;
+	--sl-color-gray-6: #1a1a19;
+	--sl-color-black: #0e0e0e;
+
+	--sl-color-hairline: #2a2a28;
+	--sl-color-hairline-light: #2a2a28;
+	--sl-color-hairline-shade: #2a2a28;
+
+	--boldie-ease: cubic-bezier(0.2, 0, 0, 1);
+	--boldie-speed: 200ms;
+}
+
+:root[data-theme='light'] {
+	--sl-color-accent-low: #ececea;
+	--sl-color-accent: #000000;
+	--sl-color-accent-high: #000000;
+	--sl-color-white: #000000;
+	--sl-color-gray-1: #121212;
+	--sl-color-gray-2: #2e2e2c;
+	--sl-color-gray-3: #555552;
+	--sl-color-gray-4: #8a8a86;
+	--sl-color-gray-5: #d6d6d2;
+	--sl-color-gray-6: #f2f2ef;
+	--sl-color-gray-7: #f7f7f5;
+	--sl-color-black: #ffffff;
+
+	--sl-color-hairline: #e3e3df;
+	--sl-color-hairline-light: #e3e3df;
+	--sl-color-hairline-shade: #e3e3df;
+}
+
+/* Headings: heavy and uppercase, tight tracking. */
+.site-title {
+	font-weight: 900;
+	font-size: 1.5rem;
+	letter-spacing: -0.02em;
+	text-transform: uppercase;
+	color: var(--sl-color-white);
+}
+
+h1#_top,
+.hero h1 {
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: -0.03em;
+	line-height: 1;
+}
+
+.sl-markdown-content :is(h2, h3, h4) {
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: -0.01em;
+}
+
+/* Starlight renders h2 inline inside a wrapper, so the rule goes on the wrapper. */
+.sl-markdown-content .sl-heading-wrapper.level-h2 {
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--sl-color-hairline);
+}
+
+/* The page title already has a rule under it. */
+.sl-markdown-content > .sl-heading-wrapper.level-h2:first-child {
+	padding-top: 0;
+	border-top: none;
+}
+
+/* Sidebar group labels and the "On this page" heading read as small caps labels. */
+.sidebar-content .group-label .large,
+.right-sidebar h2 {
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--sl-color-gray-3);
+}
+
+/* Square, flat surfaces: no rounding, no shadows. */
+.sl-markdown-content img,
+.card,
+.sl-link-card,
+.starlight-aside,
+.sl-link-button,
+.action,
+site-search button,
+mobile-starlight-toc summary,
+starlight-menu-button button,
+dialog,
+.expressive-code .frame,
+.sl-markdown-content :is(table, code) {
+	border-radius: 0 !important;
+	box-shadow: none !important;
+}
+
+.sl-link-button.primary,
+.action.primary {
+	background: var(--sl-color-white);
+	color: var(--sl-color-black);
+	border: 1px solid var(--sl-color-white);
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-weight: 700;
+	font-size: 0.875rem;
+}
+
+.sl-link-button.secondary,
+.action.secondary {
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-weight: 700;
+	font-size: 0.875rem;
+	border: 1px solid var(--sl-color-white);
+}
+
+/* Links are underlined text, not coloured. */
+.sl-markdown-content a:not(:where(.not-content *)) {
+	color: var(--sl-color-white);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.2em;
+}
+
+/* Screenshots: a hairline frame so white screens don't melt into the page. */
+.sl-markdown-content img {
+	border: 1px solid var(--sl-color-hairline);
+	background: var(--sl-color-black);
+}
+
+.sl-markdown-content table img {
+	min-width: 12rem;
+}
+
+/* Asides stay monochrome: a solid rule on the left, no tint. */
+.starlight-aside {
+	background: transparent;
+	border-inline-start: 2px solid var(--sl-color-white);
+}
+
+.starlight-aside__title {
+	color: var(--sl-color-white);
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-size: 0.8rem;
+}
+
+.sl-link-card {
+	border: 1px solid var(--sl-color-hairline);
+}
+
+.sl-link-card:hover {
+	border-color: var(--sl-color-white);
+	background: transparent;
+}
+
+.sl-link-card .title {
+	text-transform: uppercase;
+	font-weight: 800;
+	letter-spacing: 0.02em;
+}
+
+/* Smooth, short transitions. */
+a,
+button,
+.sl-link-card,
+.sl-link-button,
+body {
+	transition:
+		color var(--boldie-speed) var(--boldie-ease),
+		background-color var(--boldie-speed) var(--boldie-ease),
+		border-color var(--boldie-speed) var(--boldie-ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		transition: none !important;
+	}
+}

@@ -1,0 +1,42 @@
+---
+title: Boldie Help
+description: How to use Boldie, for salon owners, managers and staff. Covers the web app, the iPhone app and the Android app.
+template: splash
+hero:
+  title: Boldie Help
+  tagline: How to use Boldie, for salon owners, managers and staff. The web app, the iPhone app and the Android app.
+  actions:
+    - text: Get started
+      link: /getting-started/
+      variant: primary
+    - text: Tutorials
+      link: /tutorials/
+      variant: secondary
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+## Start here
+
+<CardGrid>
+	<LinkCard title="Getting started" href="/getting-started/" description="Sign in, set up your salon, light and dark." />
+	<LinkCard title="Who can do what" href="/roles/" description="Owners, managers and staff." />
+	<LinkCard title="The calendar" href="/calendar/" description="Book, block, move and check in clients." />
+	<LinkCard title="Online booking" href="/online-booking/" description="Your booking page, requests and the waitlist." />
+	<LinkCard title="Clients" href="/clients/" description="Profiles, notes, photos, patch tests and consent." />
+	<LinkCard title="Import and export" href="/import-and-export/" description="Move from Treatwell, Fresha or a spreadsheet." />
+	<LinkCard title="Notifications and messages" href="/notifications/" description="Reminders, texts, emails and the delivery log." />
+	<LinkCard title="The staff apps" href="/staff-apps/" description="Boldie on iPhone and Android." />
+</CardGrid>
+
+## About this guide
+
+Every screenshot was taken from a test copy of Boldie running a demo salon ("Boldie Demo", three staff: Rūta, Ieva
+and Greta). Names, phone numbers and prices in the pictures are demo data. Last checked against the product on
+29 October 2026.
+
+:::note[Before launch]
+Texts, emails, payments and push notifications were not connected to live providers when this guide was written.
+Screens that depend on them are shown as they behave on a test server (for example, the billing pages say
+"Test mode"). Where a step needs a live provider, the guide says so.
+:::
